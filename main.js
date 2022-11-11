@@ -20,12 +20,13 @@ function addTask(){
     taskList.push(taskContent);
 
     console.log(taskList)
+    render()
 }
 
 
 function render(){
     let resultHTML = '';
-    for(let i = 0; i<taskList.length; i++){
+    for(let i = 0; i < taskList.length; i++){ //taskList 안에 있는 아이템을 꺼냄
         resultHTML += `<div class="task">
         <div>${taskList[i]}</div>
             <div>
