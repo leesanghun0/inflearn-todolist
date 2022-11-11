@@ -1,0 +1,9 @@
+body{
+    background-image: url(images/istockphoto-1338319555-612x612.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+}
+.container{
+    background-color: white;
+}
