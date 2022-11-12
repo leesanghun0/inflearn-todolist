@@ -7,32 +7,33 @@
 //전체탭을 누르면 다시 전체 아이템으로 돌아옴.
 
 let taskInput = document.getElementById("task-input");
-//console.log(taskInput);
 let addButton = document.getElementById("add-button");
-let taskList=[];
+//console.log(taskInput);
+//console.log(addButton);
+
+let taskList = [];//taskInput.value를 담기 위함.
+
 
 addButton.addEventListener("click",addTask);
 
-
 function addTask(){
-    //console.log("클릭");
-    let taskContent = taskInput.value;
-    taskList.push(taskContent);
-
+    let taskValue = taskInput.value;
+    taskList.push(taskValue);
     console.log(taskList)
+
     render()
 }
 
-
+//리스트에 taskList를 html화면에 보이게하기
 function render(){
-    let resultHTML = '';
-    for(let i = 0; i < taskList.length; i++){ //taskList 안에 있는 아이템을 꺼냄
+    let resultHTML ="";//html결과를 담기위함.
+    for(let i = 0; i < taskList.length; i++){//taskList에 있는 아이템을 하나하나꺼냄.
         resultHTML += `<div class="task">
         <div>${taskList[i]}</div>
-            <div>
-            <button>check</button>
-            <button>delete</button>
-            </div>
+        <div>
+            <button>Check</button>
+            <button>Delete</button>
+        </div>
     </div>`;
     }
     document.getElementById("task-board").innerHTML = resultHTML;
