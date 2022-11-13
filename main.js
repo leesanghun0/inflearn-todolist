@@ -19,6 +19,8 @@ let taskList = [];//taskInput.value를 담기 위함.
 
 
 addButton.addEventListener("click",addTask);
+taskInput.addEventListener("focus",function(){taskInput.value = "";});
+
 
 function addTask(){
     let taskValue = taskInput.value;
@@ -41,4 +43,5 @@ function render(){
     </div>`;
     }
     document.getElementById("task-board").innerHTML = resultHTML;
+    //task-board를 변수에 담아서 사용할 수도 있음.
 }
