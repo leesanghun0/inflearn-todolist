@@ -24,6 +24,9 @@ taskInput.addEventListener("focus",function(){taskInput.value = "";});
 
 function addTask(){
     let taskValue = taskInput.value;
+    let task = {
+        
+    }
     taskList.push(taskValue);
     console.log(taskList)
 
