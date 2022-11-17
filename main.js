@@ -21,8 +21,6 @@ let mode = 'all';
 let filterList = [];
 
 
-
-
 addButton.addEventListener("click",addTask);
 taskInput.addEventListener("focus",function(){taskInput.value = "";});
 
@@ -37,9 +35,13 @@ function addTask(){
         taskContent : taskInput.value,
         isComplete : false
     }
+    if(!taskInput.value){
+        alert("할 일을 추가해주세요");
+    }else{
     taskList.push(task);
     console.log(taskList)
     render()
+    }
 }
 
 //리스트에 taskList를 html화면에 보이게하기
@@ -131,3 +133,10 @@ function filter(event){
 function randomIDGenerate(){
     return '_' + Math.random().toString(36).substr(2, 9);
 }
+
+
+//----------------------------------------------------------------------------
+// let HorizontalMenu = document.get("task-tabs>div");
+// let horizontalUnderLine = document.getElementById("under-line");
+// console.log(HorizontalMenu);
+// console.log(horizontalUnderLine);
